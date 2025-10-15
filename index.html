@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NFService</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="background"></div>
+
+  <div class="container">
+    <h1 class="logo">NFService</h1>
+    <p class="tagline">We Build Bots • We Code Anything</p>
+
+    <div class="buttons">
+      <button onclick="openForm('Bot')">Buy a Bot</button>
+      <button onclick="openForm('Custom Code')">Custom Code</button>
+      <a href="https://discord.gg/SMwmpuZx" target="_blank">
+        <button>Join Discord</button>
+      </a>
+    </div>
+
+    <button id="startBtn" onclick="startExperience()">▶ Start Experience</button>
+  </div>
+
+  <div id="orderForm" class="popup hidden">
+    <h2 id="formTitle"></h2>
+    <textarea id="orderText" placeholder="Describe what you need..."></textarea>
+    <button onclick="submitOrder()">Send Request</button>
+    <button onclick="closeForm()">Close</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

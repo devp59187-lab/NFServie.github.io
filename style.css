@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  overflow: hidden;
+  color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, #ff0000 0%, #000 70%);
+  animation: pulseBg 4s infinite alternate;
+  z-index: -2;
+}
+
+@keyframes pulseBg {
+  0% { filter: blur(20px) brightness(0.7); }
+  100% { filter: blur(40px) brightness(1.2); }
+}
+
+.container {
+  text-align: center;
+}
+
+.logo {
+  font-size: 3em;
+  color: #ff0000;
+  text-shadow: 0 0 15px #ff0000;
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #ff0000; }
+  to { text-shadow: 0 0 30px #ff5555; }
+}
+
+.tagline {
+  font-size: 1.2em;
+  margin: 10px 0 30px;
+  opacity: 0.8;
+}
+
+.buttons button {
+  margin: 10px;
+  padding: 12px 25px;
+  background: transparent;
+  border: 2px solid #ff0000;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.buttons button:hover {
+  background: #ff0000;
+  box-shadow: 0 0 20px #ff0000;
+}
+
+#startBtn {
+  margin-top: 50px;
+  background: #ff0000;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.1em;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  box-shadow: 0 0 20px #ff0000;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 20px #ff0000; }
+  50% { transform: scale(1.05); box-shadow: 0 0 40px #ff3333; }
+}
+
+.popup {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  background: rgba(20, 20, 20, 0.9);
+  border: 2px solid #ff0000;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 0 20px #ff0000;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.popup.active {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.hidden { display: none; }
+
+textarea {
+  width: 90%;
+  height: 100px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 6px;
+  padding: 8px;
+  resize: none;
+}
